@@ -1,0 +1,37 @@
+    <h1>家計簿アプリ</h1>
+
+    <h2>支出を追加</h2>
+    <form method="POST" action="/add">
+        金額：<input type="number" name="amount"><br>
+        カテゴリ：<input type="text" name="category"><br>
+        日付：<input type="date" name="date"><br>
+        メモ：<input type="text" name="memo"><br>
+        <button type="submit">追加</button>
+    </form>
+
+    <h2>月別表示</h2>
+
+    <form method="GET" action="/">
+        <input type="month" name="month" value="{{ month or '' }}">
+        <button type="submit">表示</button>
+        <a href="/">リセット</a>
+    </form>
+    <h2>合計金額</h2>
+
+    <div style="padding:10px; border:1px solid #ccc; width:200px; border-radius:8px;">
+        <p style="font-size:20px; font-weight:bold;">
+            ¥{{ "{:,}".format(total or 0) }}
+        </p>
+    </div>
+
+    <h2>一覧</h2>
+    <ul>
+        {% for t in transactions %}
+        <li>
+            {{ t.date }} | {{ t.category }} | ¥{{ t.amount }} | {{ t.memo }}
+            <a href="/delete/{{ t.id }}">削除</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
