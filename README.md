@@ -15,6 +15,7 @@ SQLiteによるデータ永続化
 Python / Flask
 SQLite
 HTML / CSS
+
 セットアップ方法
 git clone https://github.com/ユーザー名/kakeibo-app.git
 cd kakeibo-app
@@ -29,5 +30,4 @@ python app.py
 http://127.0.0.1:5000
 
 工夫した点
-
 最初はメモリでデータ管理し、その後SQLiteに置き換えて永続化しました。
