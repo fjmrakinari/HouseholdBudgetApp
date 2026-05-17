@@ -1,22 +1,40 @@
 家計簿アプリ
-概要
 
 Flaskで作成したシンプルな家計簿アプリです。
 支出の記録・一覧表示・削除・月別フィルタ・合計金額表示ができます。
 
-SQLiteによるデータ永続化
+URL
+https://householdbudgetapp-gter.onrender.com
+(注意事項：ポートフォリオとしてのデモ公開です、ユーザー認証機能は未実装のため、入力データは共有されます)
 
-技術スタック
+■機能
+支出の追加
+支出一覧表示
+支出削除
+月別フィルタ表示
+合計金額表示
 
-セットアップ方法
-git clone https://github.com/ユーザー名/kakeibo-app.git
-cd kakeibo-app
+■使用技術
+Python
+Flask
+HTML
+SQLAlchemy
+SQLite
+Render
 
-python -m venv venv
-source venv/bin/activate  # Windowsは venv\Scripts\activate
+■工夫点
+Flask + SQLAlchemy を用いて CRUD 処理を実装
+月別検索機能を追加し、データの絞り込みを可能にした
+合計金額をリアルタイムで集計表示
+Renderを使いデプロイし、Web上で利用可能にした
 
-pip install -r requirements.txt
-python app.py
+■今後追加、改良したいこと
+・”カテゴリ”の改善：支出追加時にカテゴリを入力したら、後の入力で過去のカテゴリをスクロールから選べるようにし、
+月別表示の際にカテゴリ別に金額を表示できるようにする
 
-ブラウザで以下にアクセス：　
-http://127.0.0.1:5000
+・上記に付随して、複数カテゴリで支出を追加できるようにする
+
+・複数ユーザー使用を想定しユーザー認証機能実装
+
+・UI改善
+
